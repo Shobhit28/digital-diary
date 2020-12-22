@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  applicationName="Digital Diary";
+  region="Regions";
+  branch="Branches";
+  members="Branch Members";
+  generation="Generate Membership Link";
   constructor() { }
 
   ngOnInit() {
