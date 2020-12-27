@@ -14,19 +14,11 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent
   },
-
-  
-    {path: 'branches',
+  {
+    path: 'branches',
       component: BranchesComponent
-    }
-  
-  
+  }
   ]}
-   
-
-
-
-
 ];
 
 @NgModule({
