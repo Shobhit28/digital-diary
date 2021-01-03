@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  appName="Digital Diary"
+
  
 applicationName ='Digital Diary'
+
 
   constructor() { }
 
