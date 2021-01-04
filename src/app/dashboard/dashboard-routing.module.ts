@@ -1,13 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-
+import { BranchesComponent } from './branches/branches.component';
 import { RegionComponent } from './region/region.component';
 
-
-const routes: Routes = [{
-=======
-import { BranchesComponent} from './branches/branches.component';
 const routes: Routes = [
   {
 
@@ -25,7 +21,8 @@ const routes: Routes = [
 
     path: 'region',
     component: RegionComponent
-
+  },
+{
     path: 'branches',
       component: BranchesComponent
   }
