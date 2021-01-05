@@ -9,9 +9,21 @@ export class DashboardComponent implements OnInit {
  
 applicationName ='Digital Diary'
 
+ 
   constructor() { }
 
   ngOnInit() {
+
+   
+    
+    
+    
+    
+     
+    
+  
+
+
   }
 
 }
