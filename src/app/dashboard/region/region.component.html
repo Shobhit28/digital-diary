@@ -18,3 +18,34 @@
   </tbody>
 </table>
 
+
+
+
+
+<div class="btn ">
+  <button (click)="onClickOpenForm()" value="Register"  style="float: right;">Create New Region</button>
+</div>
+  <div *ngIf="openform" class="form1">
+  
+    <form [formGroup]="formdata2" (ngSubmit)="onClickSubmitForm(formdata2.value)">
+    Name <br>
+    <input type="text" class="yourtextbox" name="yourname" placeholder="Your Name" formControlName="name"><br>
+    Last Name<br>
+    <input type="text" class="yourtextbox" name="yourlastname" placeholder="Your Last Name" formControlName="lastname"><br>
+    Age<br>
+    <input type="text" class="yourtextbox" name="yourage" placeholder="Your Age" formControlName="age"><br>
+    Email <br>
+    <input type="text" class="yourtextbox" name="youremail" placeholder="Your Email" formControlName="email"><br>
+    Mobile Number<br>
+    <input type="text" class="yourtextbox" name="yourmobile" placeholder="Your Mobile Number" formControlName="mobilenumber"><br>
+    Aadhaar Number<br>
+    <input type="text" class="yourtextbox" name="youraadhaar" placeholder="Your Aadhar Number" formControlName="aadhaarnumber"><br>
+    <input type="button" [disabled]="!formdata2.valid"   class="forsubmit" value="Submit">
+    </form>
+
+
+  </div>
+<br>
+<br>
+
+

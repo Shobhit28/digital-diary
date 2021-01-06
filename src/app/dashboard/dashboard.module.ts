@@ -5,13 +5,15 @@ import { HomeComponent } from './home/home.component';
 import { RegionComponent } from './region/region.component';
 import { BranchesComponent } from './branches/branches.component';
 import { FilterPipe } from './filter.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   
   declarations: [
