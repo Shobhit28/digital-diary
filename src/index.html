@@ -6,6 +6,14 @@
   <title>digital-diary</title>
   <base href="/">
 
+  <meta name="google-signin-client_id"
+  content="857854339377-qagskb2seajnlr6jft4c5nvlr90sgclg.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  
+  <!-- <meta name="google-signin-client_id"
+  content="857854339377-qagskb2seajnlr6jft4c5nvlr90sgclg.apps.googleusercontent.com">>
+  <script src="https://apis.google.com/js/platform.js" async defer></script> -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -24,5 +32,15 @@
     crossorigin="anonymous"></script>
   <app-root></app-root>
 </body>
+
+
+<script>
+  function onSignIn(googleUser)
+  {
+    console.log('User  is' + JSON.stringify(googleUser.getBasicProfile()))
+  }
+</script>
+
+
 
 </html>

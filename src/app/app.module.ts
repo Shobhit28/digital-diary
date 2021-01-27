@@ -4,12 +4,14 @@ import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    PageNotFoundComponent 
+    PageNotFoundComponent,
+    LoginComponent 
   ],
   imports: [
     AppRoutingModule,
