@@ -1,3 +1,109 @@
-<p>
-  branch-members works!
-</p>
+
+<div class="border border-dark rounded">
+<div class="content" role="main">
+  <div class="card card-default" >
+    <div class="card-header"></div>
+    <div class="card-body">
+      <form class="form-group">
+    <div class="row justify-content-left">
+      <div class="col-md-2">
+      
+        <div class="d-inline-block mr-10">
+      <label for="search-text">Search Text</label>
+      <input type="search" class="form-control" id="search-text" aria-describedby="search-text" 
+        [(ngModel)]="searchText" placeholder="Enter text to search" 
+        autofocus>
+      
+<table class="table">
+  <tbody>
+    <tr *ngFor ="let name of characters|filter:searchText" [class.selected]="name==selectedMembers">
+      <td>{{ name.name}}</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+</div>
+  </div>
+</form>
+  </div>
+</div>
+</div>
+
+
+
+<div>
+<button  class="btn btn-primary float-right">Member Registration</button>
+</div>
+
+<div class="border border-dark rounded">
+<div class="content1" role="main">
+  <div class="card card-default">
+    <div class="card-header">Member's Details</div>
+    <div class="card-body">
+    <div class="col-md-2">
+      
+<form [formGroup]="formpersonal" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+  <label>
+    First Name:
+    <input class="form-control input-group-lg" type="text" formControlName="firstName" placeholder="Enter First Name" required>
+    <div *ngIf="formpersonal.get('firstName').touched && formpersonal.get('firstName').invalid" class="alert alert-danger">
+     Name is required
+  </div>
+  </label>
+  <label for="lastName" class="sr-only"></label>
+    Last Name:
+    <input class="form-control input-group-lg" type="text" formControlName="lastName" placeholder="Enter Last Name" required>
+    <div *ngIf="formpersonal.get('lastName').touched && formpersonal.get('lastName').invalid" class="alert alert-danger">
+      last Name is required
+  </div>
+
+  <label >
+    EMail:
+    <input class="form-control input-group-sm" type="text" formControlName="mail" placeholder="Enter Email Id" required>
+  </label>
+  <label>
+    Branch Name:
+    <input class="form-control input-group-lg" type="text" formControlName="br" placeholder="Enter Branch Name">
+  </label>
+  <label>
+    Member Id:
+    <input class="form-control input-group-lg" type="text" formControlName="mid" placeholder="Enter your member id">
+  </label>
+
+  <div formGroupName="address">
+    
+  
+    <label>
+      Street:
+      <input class="form-control input-group-lg" type="text" formControlName="street">
+    </label>
+  
+    <label>
+      City:
+      <input class="form-control input-group-lg" type="text" formControlName="city">
+    </label>
+    
+    <label>
+      State:
+      <input class="form-control input-group-lg" type="text" formControlName="state">
+    </label>
+  
+    <label>
+      Zip Code:
+      <input class="form-control input-group-lg" type="text" formControlName="zip">
+    </label>
+  </div>
+
+  <p>
+    Value: {{ FirstName.value }}
+    Value: {{ LastName.value }}
+  </p>
+  <button class="btn btn-primary" type="submit" [disabled]="!profileForm.valid">Submit</button>
+</div>
+</form>
+    </div>
+</div></div>
+</div></div>
+
