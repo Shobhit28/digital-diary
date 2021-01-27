@@ -61,7 +61,7 @@ export class LoginComponent implements OnInit {
   }
 }
 
-interface User {
+export interface User {
   id: string;
   name: string;
   profileImageUrl: string;

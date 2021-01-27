@@ -11,7 +11,7 @@ export class CookieService {
     for (const cookie of cookieArray) {
       const c: string = cookie.replace(/^\s+/g, '');
       if (c.indexOf(cookieName) === 0) {
-        return c.substring(cookieName.length, c.length);
+        return decodeURIComponent(c.substring(cookieName.length, c.length));
       }
     }
     return undefined;
