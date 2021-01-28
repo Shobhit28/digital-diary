@@ -21,7 +21,11 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+    "@auth0/angular-jwt": "^5.0.2",
+    "@types/gapi": "0.0.39",
+    "@types/gapi.auth2": "0.0.52",
     "core-js": "^2.4.1",
+    "ngx-cookie-service": "^11.0.2",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },
