@@ -1,0 +1,21 @@
+
+  
+  .message1{  
+      margin-top: 15px;
+      text-align: center;
+} 
+.message2{  
+    text-align: center;
+    margin-bottom: 50px;
+}
+.form-group{
+  margin-bottom: 30px;
+  }
+  .form-data{
+    margin-left: 550px;
+    margin-right: 550px;
+    margin-top: 10px;
+  }
+  .label{
+    font-style: italic;
+  }

@@ -1,0 +1,23 @@
+
+ 
+ 
+  .navbar {
+    width: 100%;
+    overflow: auto;
+  }
+  .navbar-brand {
+    font-size: 25px;
+  }
+  .navbar-nav {
+    
+    padding: 10px;
+    color: white;
+    text-decoration:none;
+    font-size: 20px;
+    text-align: center; 
+  
+  }
+ .navbar a:hover {
+    background-color: #000;
+  }
+ 
