@@ -1,0 +1,35 @@
+body,
+html {
+  height: 100%;
+}
+.white-text{
+    text-align: center;
+    margin-top: 60px;
+   
+}
+.white-text2{
+    text-align: center;
+    margin-top: 60px;
+}
+
+input[type=email]{
+    width:300px;
+}
+input[type=text]{
+    width:300px;
+}
+
+.form-col1{
+
+    padding-left: 220px;
+   padding-right: 300px;
+   font-weight: bold;
+   font-size: 20px;
+}
+.form-col2{
+
+    padding-left: 220px;
+   padding-right: 300px;
+   font-weight: bold;
+   font-size: 20px;
+}
