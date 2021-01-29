@@ -10,6 +10,7 @@ import { CookieService } from '../services/coookie.service';
 })
 export class LoginComponent implements OnInit {
 
+  
   auth2: any;
   constructor(
     private readonly ngZone: NgZone,

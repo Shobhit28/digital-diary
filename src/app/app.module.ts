@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { LoginGuard } from './login.guard';
 import { CookieService } from './services/coookie.service';
@@ -13,6 +12,7 @@ import { PendingapprovalsComponent } from './admin/pendingapprovals/pendingappro
 import { MemberdashboardComponent } from './memberdashboard/memberdashboard.component';
 import { BranchComponent } from './common components/branch/branch.component';
 import { MemberapprovalComponent } from './memberapproval/memberapproval.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -20,7 +20,6 @@ import { MemberapprovalComponent } from './memberapproval/memberapproval.compone
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
     PageNotFoundComponent,
     LoginComponent,
     AdminComponent,
@@ -28,7 +27,8 @@ import { MemberapprovalComponent } from './memberapproval/memberapproval.compone
     PendingapprovalsComponent,
     MemberdashboardComponent,
     BranchComponent,
-    MemberapprovalComponent
+    MemberapprovalComponent,
+    HomeComponent
   ],
   imports: [
     AppRoutingModule,
