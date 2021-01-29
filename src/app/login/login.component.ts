@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
       email: profile.getEmail()
     }
     this.cookieService.setCookie(LOGIN_COOKIE_NAME, JSON.stringify(user), EXPIRATION_DAYS);
-    this.router.navigate(['home']);
+    this.router.navigate(['admin']);
 
 
   }
