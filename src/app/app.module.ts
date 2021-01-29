@@ -7,6 +7,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { LoginGuard } from './login.guard';
 import { CookieService } from './services/coookie.service';
+import { AdminComponent } from './admin/admin.component';
+import { MemberlistComponent } from './common components/memberlist/memberlist.component';
+import { PendingapprovalsComponent } from './admin/pendingapprovals/pendingapprovals.component';
+import { MemberdashboardComponent } from './memberdashboard/memberdashboard.component';
+import { BranchComponent } from './common components/branch/branch.component';
+import { MemberapprovalComponent } from './memberapproval/memberapproval.component';
 
 
 
@@ -16,12 +22,17 @@ import { CookieService } from './services/coookie.service';
     AppComponent,
     DashboardComponent,
     PageNotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    AdminComponent,
+    MemberlistComponent,
+    PendingapprovalsComponent,
+    MemberdashboardComponent,
+    BranchComponent,
+    MemberapprovalComponent
   ],
   imports: [
     AppRoutingModule,
-    BrowserModule,
-    
+    BrowserModule
   ],
   providers: [
     LoginGuard,
