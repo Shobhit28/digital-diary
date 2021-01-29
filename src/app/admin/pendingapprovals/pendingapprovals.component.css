@@ -1,6 +1,12 @@
 h3 {
     margin-top: 25px;
   }
-  .custom-control-label::before {
-    background-color: red;
-}
+  
+  .fa-check
+  {
+    color:green;
+  }
+  .fa-times
+  {
+    color: red;
+  }

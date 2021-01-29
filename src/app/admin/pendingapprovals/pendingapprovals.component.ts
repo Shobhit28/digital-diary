@@ -30,6 +30,11 @@ export class PendingapprovalsComponent implements OnInit {
 }]
  }
 
+ foo() {
+  document.getElementById("buttonAccept") ;
+  document.getElementById("buttonRefuse") ;
+  return true;
+}
   ngOnInit() {
   }
 
