@@ -5,12 +5,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
-<<<<<<< HEAD
-=======
 import { LoginGuard } from './login.guard';
 import { CookieService } from './services/coookie.service';
+import { HomeComponent } from './home/home.component';
 
->>>>>>> e5c87d0db8946205b71beb2dfefbbfd9db2c7123
 
 
 
@@ -19,11 +17,8 @@ import { CookieService } from './services/coookie.service';
     AppComponent,
     DashboardComponent,
     PageNotFoundComponent,
-    LoginComponent
-<<<<<<< HEAD
-    
-=======
->>>>>>> e5c87d0db8946205b71beb2dfefbbfd9db2c7123
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     AppRoutingModule,

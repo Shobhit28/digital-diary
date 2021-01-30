@@ -4,17 +4,18 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginGuard } from './login.guard';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'login'
+    redirectTo: 'home'
   },
   {
     path: '',
     component: DashboardComponent,
-    canActivate: [LoginGuard],
+    
     children: [
       {
         path: 'dashboard',
@@ -30,6 +31,18 @@ const routes: Routes = [
       {
         path: 'login',
         component: LoginComponent
+      }
+
+    ]
+  },
+  {
+    path: '',
+    component: HomeComponent,
+    canActivate: [LoginGuard],
+    children: [
+      {
+        path: 'home',
+        component:HomeComponent
       }
 
     ]

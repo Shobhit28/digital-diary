@@ -4,19 +4,16 @@ import { User } from '../login/login.component';
 import { CookieService } from '../services/coookie.service';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class DashboardComponent implements OnInit {
-
+export class HomeComponent implements OnInit {
   applicationName = 'Digital Diary'
-  user: User;
-  constructor(private cookieService: CookieService) { }
-
+  user:User;
+  constructor(private cookieService: CookieService){ }
+  
   ngOnInit() {
-    
     this.user = JSON.parse(this.cookieService.getCookie(LOGIN_COOKIE_NAME));
   }
-
 }
