@@ -1,7 +1,10 @@
-import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EXPIRATION_DAYS, LOGIN_COOKIE_NAME } from '../constants';
+import { UserType } from '../models/enums';
+import { ApiService } from '../services/api.service';
 import { CookieService } from '../services/coookie.service';
+import { ConfigUtil } from '../utils/config-utils';
 
 @Component({
   selector: 'app-login',
@@ -10,12 +13,13 @@ import { CookieService } from '../services/coookie.service';
 })
 export class LoginComponent implements OnInit {
 
-  
+
   auth2: any;
   constructor(
     private readonly ngZone: NgZone,
     private readonly cookieService: CookieService,
-    private readonly router: Router
+    private readonly router: Router,
+    private readonly apiService: ApiService
   ) {
     window['onSignIn'] = (user) => this.ngZone.run(() => this.onSignIn(user));
   }
@@ -33,10 +37,7 @@ export class LoginComponent implements OnInit {
       profileImageUrl: profile.getImageUrl(),
       email: profile.getEmail()
     }
-    this.cookieService.setCookie(LOGIN_COOKIE_NAME, JSON.stringify(user), EXPIRATION_DAYS);
-    this.router.navigate(['admin']);
-
-
+    this.createUser(user);
   }
 
   googleSDK() {
@@ -60,11 +61,28 @@ export class LoginComponent implements OnInit {
     }(document, 'script', 'google-jssdk'));
 
   }
+
+  private createUser(user: User): void {
+    this.cookieService.setCookie(LOGIN_COOKIE_NAME, JSON.stringify(user), EXPIRATION_DAYS);
+    this.apiService.createUser({
+      name: user.name,
+      email: user.email
+    }).subscribe((response) => {
+      user.type = response['type'];
+      const url = ConfigUtil.getRedirectUrl(user.type);
+      this.cookieService.setCookie(LOGIN_COOKIE_NAME, JSON.stringify(user), EXPIRATION_DAYS);
+      this.router.navigate([url]);
+    })
+  }
+
+  
 }
 
 export interface User {
   id: string;
   name: string;
-  profileImageUrl: string;
+  profileImageUrl?: string;
   email: string;
+  type?: UserType;
+  branchId?: string;
 }

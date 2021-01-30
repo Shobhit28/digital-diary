@@ -6,37 +6,44 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { LoginGuard } from './login.guard';
 import { CookieService } from './services/coookie.service';
-import { AdminComponent } from './admin/admin.component';
-import { MemberlistComponent } from './common components/memberlist/memberlist.component';
-import { PendingapprovalsComponent } from './admin/pendingapprovals/pendingapprovals.component';
-import { MemberdashboardComponent } from './memberdashboard/memberdashboard.component';
-import { BranchComponent } from './common components/branch/branch.component';
-import { MemberapprovalComponent } from './memberapproval/memberapproval.component';
+import { MemberdashboardComponent } from './member-dashboard/member-dashboard.component';
+import { MemberapprovalComponent } from './approval-pending/approval-pending.component';
 import { HomeComponent } from './home/home.component';
-
-
-
+import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from './services/api.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UserInfoResolverService } from './services/user-info-resolver.service';
+import { HomeGuard } from './guards/home-guard.service';
+import { AdminGuard } from './guards/admin-guard.service';
+import { MemberGuard } from './guards/member-guard.service';
+import { ApprovalPendingGuard } from './guards/approval-pending.guard.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
     LoginComponent,
-    AdminComponent,
-    MemberlistComponent,
-    PendingapprovalsComponent,
-    MemberdashboardComponent,
-    BranchComponent,
     MemberapprovalComponent,
     HomeComponent
   ],
   imports: [
     AppRoutingModule,
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [
+    CookieService,
+    ApiService,
     LoginGuard,
-    CookieService
+    HomeGuard,
+    AdminGuard,
+    MemberGuard,
+    ApprovalPendingGuard,
+    {
+      provide: 'userInfoResolver',
+      useClass: UserInfoResolverService
+    }
   ],
   bootstrap: [AppComponent]
 })

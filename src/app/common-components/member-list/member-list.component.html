@@ -1,0 +1,15 @@
+<h1 style="text-align: center">{{welcome}}</h1>
+<table class="table">
+  <tr>
+    <th>#</th>
+    <th>Member Name</th>
+    <th>Email</th>
+  </tr>
+  <tr *ngFor="let member of members; let i = index">
+    <td>{{i + 1}}</td>
+    <td>{{member?.name}}</td>
+    <td>{{member?.email}}</td>
+    <td>{{member?.type}}</td>
+
+  </tr>
+</table>
