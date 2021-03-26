@@ -40,10 +40,7 @@ import { ApprovalPendingGuard } from './guards/approval-pending.guard.service';
     AdminGuard,
     MemberGuard,
     ApprovalPendingGuard,
-    {
-      provide: 'userInfoResolver',
-      useClass: UserInfoResolverService
-    }
+    UserInfoResolverService
   ],
   bootstrap: [AppComponent]
 })

@@ -9,36 +9,51 @@ import { HomeGuard } from './guards/home-guard.service';
 import { MemberGuard } from './guards/member-guard.service';
 import { ApprovalPendingGuard } from './guards/approval-pending.guard.service';
 import { AdminGuard } from './guards/admin-guard.service';
+import { UserInfoResolverService } from './services/user-info-resolver.service';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'home'
+    redirectTo: 'app'
   },
   {
     path: 'login',
     component: LoginComponent,
   },
   {
-    path: 'home',
-    component: HomeComponent,
-    canActivate: [LoginGuard, HomeGuard]
-  },
-  {
-    path: 'admin',
-    loadChildren: './admin/admin.module#AdminModule',
-    canActivate: [LoginGuard, AdminGuard]
-  },
-  {
-    path: 'member',
-    loadChildren: './member-dashboard/member-dashboard.module#MemberDashboardModule',
-    canActivate: [LoginGuard, MemberGuard]
-  },
-  {
-    path: 'approval-pending',
-    component: MemberapprovalComponent,
-    canActivate: [LoginGuard, ApprovalPendingGuard]
+    path: 'app',
+    canActivate: [LoginGuard],
+    resolve:  {
+      userInfo: UserInfoResolverService
+    },
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'home'
+      },
+      {
+        path: 'home',
+        component: HomeComponent,
+        canActivate: [HomeGuard]
+      },
+      {
+        path: 'admin',
+        loadChildren: './admin/admin.module#AdminModule',
+        canActivate: [AdminGuard]
+      },
+      {
+        path: 'member',
+        loadChildren: './member-dashboard/member-dashboard.module#MemberDashboardModule',
+        canActivate: [MemberGuard]
+      },
+      {
+        path: 'approval-pending',
+        component: MemberapprovalComponent,
+        canActivate: [ApprovalPendingGuard]
+      },
+    ]
   },
   {
     path: '**',

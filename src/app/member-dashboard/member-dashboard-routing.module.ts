@@ -10,9 +10,6 @@ const routes: Routes = [
 
   path: '',
   component: MemberdashboardComponent,
-  resolve:  {
-    userInfo: 'userInfoResolver'
-  },
   children: [{
     path: '',
     pathMatch: 'full',

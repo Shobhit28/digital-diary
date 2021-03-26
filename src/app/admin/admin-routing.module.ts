@@ -11,9 +11,6 @@ const routes: Routes = [
 
   path: '',
   component: AdminComponent,
-  resolve:  {
-    userInfo: 'userInfoResolver'
-  },
   children: [{
     path: '',
     pathMatch: 'full',

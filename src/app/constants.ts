@@ -3,10 +3,10 @@ export const EXPIRATION_DAYS = 7;
 export const HOSTNAME = 'http://localhost:8080'
 
 export const LOGIN_URL = '/login';
-export const HOME_URL = '/home';
-export const ADMIN_URL = '/admin';
-export const MEMBER_URL = '/member';
-export const APPROVAL_PENDING_URL = '/approval-pending';
+export const HOME_URL = '/app/home';
+export const ADMIN_URL = '/app/admin';
+export const MEMBER_URL = '/app/member';
+export const APPROVAL_PENDING_URL = '/app/approval-pending';
 
 // APIs
 export const CREATE_USER_URL = '/v1/create-user'
